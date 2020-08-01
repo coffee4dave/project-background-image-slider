@@ -1,0 +1,45 @@
+:root {
+    --bgcolor: #455F87;
+    --bgcolor2: #E9EEF2;
+    --bgcolor3: #F28705;
+    --textcolor: black;
+    --color4: #B36404;
+}
+
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background-color: var(--bgcolor);
+}
+
+.btn {
+    font-weight: bold;
+    background-color: black;
+    font-size: 3rem;
+    padding: 1rem 2rem;
+}
+
+#btn-right {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+#btn-left {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+#img-container {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+    padding: 2rem 2rem;
+    border-radius: 0.5rem;
+    border: solid 1rem black;
+    color: white;
+
+}
