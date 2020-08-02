@@ -53,9 +53,8 @@ function init() {
         // Begin accessing JSON data here
         let data = JSON.parse(this.response);
         if (request.status >= 200 && request.status < 400) {
-            data.forEach((movie) => {
-                console.log(movie.links.download)
-                images.push(movie.links.download);
+            data.forEach((pics) => {
+                images.push(pics.urls.regular);
             })
         } else {
             console.log('error')
