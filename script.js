@@ -33,7 +33,12 @@ left.addEventListener("click", () => {
 });
 
 function getImage() {
-    return "url('" + images[index].url + "')";
+    try {
+        return "url('" + images[index].url + "')";
+    } catch (error) {
+        console.error(error);
+    }
+
 }
 
 function increaseIndex() {

@@ -46,4 +46,7 @@
 
 #attr {
     font-size: 0.75rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
 }
