@@ -36,6 +36,7 @@
 #img-container {
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     height: 80vh;
     padding: 2rem 2rem;
     border-radius: 0.5rem;
