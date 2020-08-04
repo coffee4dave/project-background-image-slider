@@ -51,7 +51,7 @@ function decreaseIndex() {
 function init() {
     // Create a request variable and assign a new XMLHttpRequest object to it.
     var request = new XMLHttpRequest();
-    request.open('GET', 'http://api-relay-dwb.herokuapp.com/api/search', true);
+    request.open('GET', 'https://api-relay-dwb.herokuapp.com/api/search', true);
 
     request.onload = function() {
         // Begin accessing JSON data here
