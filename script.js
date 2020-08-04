@@ -56,7 +56,7 @@ function init() {
     request.onload = function() {
         // Begin accessing JSON data here
         let data = JSON.parse(this.response);
-        console.log(data);
+
         if (request.status >= 200 && request.status < 400) {
             data.images.forEach((pics) => {
                 let image = new Object();
