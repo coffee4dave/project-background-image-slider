@@ -2,6 +2,9 @@ const right = document.querySelector("#btn-right");
 const left = document.querySelector("#btn-left");
 const img = document.querySelector("#img-container");
 const attr = document.querySelector("#attr");
+const search = document.querySelector("#search");
+const searchform = document.querySelector("#search-form");
+
 
 
 // const images = [
@@ -13,11 +16,15 @@ const attr = document.querySelector("#attr");
 // ];
 let images = [];
 let index = 0;
-init();
+let searchterm = "funny animals";
+init(searchterm);
 
-window.addEventListener("load", () => {
 
-    // img.style.backgroundImage = getImage();
+searchform.addEventListener('submit', (e) => {
+    e.preventDefault();
+    searchterm = search.value;
+    init(searchterm);
+    search.value = '';
 });
 
 right.addEventListener("click", () => {
@@ -53,10 +60,13 @@ function decreaseIndex() {
 
 //========================================================
 
-function init() {
+function init(query) {
     // Create a request variable and assign a new XMLHttpRequest object to it.
+    images = [];
+    let searchString = query;
+    console.log(searchString);
     var request = new XMLHttpRequest();
-    request.open('GET', 'https://api-relay-dwb.herokuapp.com/api/search', true);
+    request.open('GET', `https://api-relay-dwb.herokuapp.com/api/search?q=${searchString}`, true);
 
     request.onload = function() {
         // Begin accessing JSON data here
@@ -79,8 +89,15 @@ function init() {
 
     // Send request
     request.send();
-
-    request.addEventListener('loadend', () => {
+    // request.addEventListener('progress', (e) => {
+    //     if (e.lengthComputable) {
+    //         var percentComplete = e.loaded / e.total * 100;
+    //         attr.innerHTML = `Loading... ${percentComplete} complete.`;
+    //     } else {
+    //         // Unable to compute progress information since the total size is unknown
+    //     }
+    // });
+    request.addEventListener('load', () => {
         img.style.backgroundImage = getImage();
         attr.innerHTML = `Photo by <a href = "https://unsplash.com/@${images[index].username}?utm_source=demo&utm_medium=referral"> ${images[index].user} </a> on <a href="https://unsplash.com/?utm_source=demo&utm_medium=referral ">Unsplash</a>`;
     });

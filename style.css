@@ -7,13 +7,20 @@
     --btnbg: rgba(0, 0, 0, 0.3);
 }
 
-
+label {
+    color: white;
+}
 
 .masthead {
     height: 100vh;
     min-height: 500px;
     background-color: var(--bgcolor);
 }
+
+#search-form {
+    margin: 2.5% auto;
+}
+
 
 #img-container {
     position: relative;
@@ -28,13 +35,11 @@
 
 }
 
-.btn {
+
+#btn-right {
     background-color: var(--btnbg);
     height: 100%;
     width: 5%;
-}
-
-#btn-right {
     position: absolute;
     top: 0;
     right: 0;
@@ -42,6 +47,9 @@
 }
 
 #btn-left {
+    background-color: var(--btnbg);
+    height: 100%;
+    width: 5%;
     position: absolute;
     top: 0;
     left: 0;
